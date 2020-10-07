@@ -8,17 +8,18 @@
   <title>Laravel</title>
   <div class="container">
     <h1 class="mt-2">Pokemons</h1>
-      <table class="table mt-2 text-center">
-        <tr>
-          <th class="text-left">Nome</th>
-          <th></th>
-        </tr>
-        @foreach ($produtos as $p)
+    <table class="table mt-2 text-center">
+      <tr>
+        <th class="text-left">Nome</th>
+        <th></th>
+      </tr>
+      @foreach ($pokemons as $p)
         <tr>
           <td class="text-left">{{ $p->name }}</td>
         </tr>
       @endforeach
-      </table>
+    </table>
+  </div>
 </head>
 <body>
   

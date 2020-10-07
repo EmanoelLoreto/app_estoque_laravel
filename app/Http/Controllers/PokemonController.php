@@ -12,10 +12,10 @@ class PokemonController extends Controller
 {
     public function listarPokemons()
     {
-      $client = new Client([(['base_uri' => 'http://pokeapi.co/'])]);
+      $client = new Client(['base_uri' => env("POKEMON_API")]);
 
-      $response = $client->request('GET', 'api/v2/pokemon');
-
-      return view('pokemon.pokemons')->with('pokemons', $response);
+      $response = $client->request('GET', '/api/v2/pokemon')->getBody();
+      $json = json_decode($response);
+      return view('pokemon.pokemons')->with('pokemons', $json->results);
     }
 }
