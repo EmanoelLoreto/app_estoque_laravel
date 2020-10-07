@@ -28,3 +28,4 @@ Route::post('/produtos/alterar', 'App\Http\Controllers\ProdutoController@alterar
 
 Route::get('/produtos/excluir/{id}', 'App\Http\Controllers\ProdutoController@excluir');
 
+Route::get('/pokemons', 'App\Http\Controllers\PokemonController@listarPokemons');
